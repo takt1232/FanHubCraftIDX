@@ -1,0 +1,403 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    height: 100%;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    display: flex;
+    height: 100%;
+}
+.sidebar {
+    position: sticky;
+    width: 220px;
+    border-right: 1px solid #dbdbdb;
+    padding: 20px;
+}
+.sidebar h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.sidebar-icon {
+    margin-right: 10px;
+}
+.sidebar li {
+    margin-bottom: 20px;
+}
+.main-content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 20px;
+    background-color: #fafafa;
+}
+.story-circles {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+.story-circle {
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #dbdbdb;
+    margin-right: 15px;
+    flex-shrink: 0;
+    }
+.story-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.post {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+.post-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #fff;
+    z-index: 4;
+}
+.action-div {
+    display: flex;
+    gap: 20px;
+}
+.image-caption {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    z-index: 4;
+}
+.fa-ellipsis {
+    cursor:pointer;
+}
+.like-count{
+    margin-right: 10px;
+}
+.fa-heart {
+    cursor: pointer;
+}
+.post {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    max-width: 750px; 
+    margin: 20px auto;
+  }
+.blurred-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(10px);
+    z-index: 1;
+}
+.main-image {
+    width: 100%;
+    height: 402px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -5px;
+}
+.post-content {
+    position: relative;
+    z-index: 3;
+    padding: 15px;
+    color: #000; 
+    background-color: #fff;
+}  
+.right-sidebar {
+    position: sticky;
+    width: 300px;
+    padding: 20px;
+    border-left: 1px solid #dbdbdb;
+}
+.suggestions h2 {
+    font-size: 14px;
+    color: #8e8e8e;
+    margin-bottom: 10px;
+}
+.suggestion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.suggestion-profile {
+    display: flex;
+    align-items: center;
+}
+.suggestion-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #dbdbdb;
+    margin-right: 10px;
+}
+.suggestion-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.follow-button {
+    color: #0095f6;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#page-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.modal {
+    display: none; /* Initially hidden */
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: fixed; /* Position it fixed to the viewport */
+    top: 50%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Center the modal */
+    z-index: 98; /* Make sure it is above other elements */
+}
+.modal-header {
+    padding: 10px 16px;
+    border-bottom: 1px solid #dbdbdb;
+    text-align: center;
+    font-weight: bold;
+}
+.modal-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+.upload-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+.upload-text {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+.select-button {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.post-creation {
+    display: flex;
+    height: 500px;
+}
+.image-preview {
+    flex: 2;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.post-details {
+    flex: 1;
+    padding: 16px;
+    border-left: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #dbdbdb;
+    margin-right: 12px;
+}
+textarea {
+    border: none;
+    resize: none;
+    flex-grow: 1;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+.post-options {
+    border-top: 1px solid #dbdbdb;
+    padding-top: 16px;
+}
+.option {
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.share-button {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: flex-end;
+}
+.modal-overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 97; /* Just below the modal */
+}
+/* From Uiverse.io by vinodjangid07 */ 
+.loader {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.truckWrapper {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    overflow-x: hidden;
+}
+/* truck upper body */
+.truckBody {
+    width: 130px;
+    height: fit-content;
+    margin-bottom: 6px;
+    animation: motion 1s linear infinite;
+}
+/* truck suspension animation*/
+@keyframes motion {
+    0% {
+    transform: translateY(0px);
+    }
+    50% {
+    transform: translateY(3px);
+    }
+    100% {
+    transform: translateY(0px);
+    }
+}
+/* truck's tires */
+.truckTires {
+    width: 130px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px 0px 15px;
+    position: absolute;
+    bottom: 0;
+}
+.truckTires svg {
+    width: 24px;
+}
+
+.road {
+    width: 100%;
+    height: 1.5px;
+    background-color: #282828;
+    position: relative;
+    bottom: 0;
+    align-self: flex-end;
+    border-radius: 3px;
+}
+.road::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: #282828;
+    right: -50%;
+    border-radius: 3px;
+    animation: roadAnimation 1.4s linear infinite;
+    border-left: 10px solid white;
+}
+.road::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #282828;
+    right: -65%;
+    border-radius: 3px;
+    animation: roadAnimation 1.4s linear infinite;
+    border-left: 4px solid white;
+}
+
+.lampPost {
+    position: absolute;
+    bottom: 0;
+    right: -90%;
+    height: 90px;
+    animation: roadAnimation 1.4s linear infinite;
+}
+
+@keyframes roadAnimation {
+    0% {
+    transform: translateX(0px);
+    }
+    100% {
+    transform: translateX(-350px);
+    }
+}

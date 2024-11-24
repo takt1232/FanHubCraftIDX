@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+}
+
+.register-form button {
+    padding: 10px;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.register-form button:hover {
+    background-color: #007bbf;
+}
+
+.signup-prompt {
+    margin-top: 20px;
+}
+
+.signup-prompt a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.error-container {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #f44336;  /* Red border */
+    background-color: #ffdddd;  /* Light red background */
+    color: #d8000c;              /* Dark red text color */
+    border-radius: 5px;         /* Rounded corners */
+}
+
+.error-list {
+    list-style-type: none;       /* Remove bullet points */
+    padding: 0;                  /* Remove padding */
+    margin: 0;                   /* Remove margin */
+}
+
+.error-list li {
+    margin: 5px 0;               /* Space between errors */
+    font-weight: bold;            /* Bold text for errors */
+}

@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}FanHubCraft Login{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block container %}
+<div class="container">
+    <div class="logo">
+        <h1>FanHubCraft</h1>
+    </div>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form class="login-form" action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Phone number, username, or email" name="username" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <button type="submit">Log In</button>
+    </form>
+    <div class="divider">
+        <span>OR</span>
+    </div>
+    <div class="signup-prompt">
+        <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+    </div>
+</div>
+
+{% endblock %}
